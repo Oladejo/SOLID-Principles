@@ -1,4 +1,6 @@
 ﻿using OCPLibrary;
+using OCPLibrary.Accounts;
+using OCPLibrary.Applicants;
 using System;
 using System.Collections.Generic;
 
@@ -8,11 +10,13 @@ namespace OCPDemo
     {
         static void Main(string[] args)
         {
-            List<PersonModel> applicants = new List<PersonModel>
+            //Open and Closed Principle : Closed for modification but open for extension
+
+            List<IApplicantModel> applicants = new List<IApplicantModel>
             {
                 new PersonModel { FirstName = "Azeez", LastName = "Tunde"},
-                new PersonModel { FirstName = "Ade", LastName = "Saka"},
-                new PersonModel { FirstName = "Maryam", LastName = "Fareedah"}
+                new ManagerModel { FirstName = "Ade", LastName = "Saka"},
+                new ExecutiveModel { FirstName = "Maryam", LastName = "Fareedah"}
             };
 
             List<EmployeeModel> employees = new List<EmployeeModel>();
@@ -20,12 +24,12 @@ namespace OCPDemo
 
             foreach(var person in applicants)
             {
-                employees.Add(accountProcessor.Create(person));
+                employees.Add(person.AccountProcessor.Create(person));
             }
 
             foreach(var emp in employees)
             {
-                Console.WriteLine($"{emp.FirstName} { emp.LastName } : {emp.EmailAddress}");
+                Console.WriteLine($"{emp.FirstName} { emp.LastName } : {emp.EmailAddress}, isManager: {emp.IsManager}, IsExecutive : {emp.IsExecutive}");
             }
 
             Console.ReadLine();

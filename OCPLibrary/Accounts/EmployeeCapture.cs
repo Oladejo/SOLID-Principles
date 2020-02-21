@@ -1,8 +1,10 @@
-﻿namespace OCPLibrary
+﻿using OCPLibrary.Applicants;
+
+namespace OCPLibrary.Accounts
 {
-    public class Accounts
+    public class EmployeeCapture
     {
-        public EmployeeModel Create(PersonModel person)
+        public static EmployeeModel CreateEmployee(IApplicantModel person)
         {
             EmployeeModel employee = new EmployeeModel
             {
