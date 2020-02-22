@@ -16,7 +16,8 @@ namespace OCPDemo
             {
                 new PersonModel { FirstName = "Azeez", LastName = "Tunde"},
                 new ManagerModel { FirstName = "Ade", LastName = "Saka"},
-                new ExecutiveModel { FirstName = "Maryam", LastName = "Fareedah"}
+                new ExecutiveModel { FirstName = "Maryam", LastName = "Fareedah"},
+                new TechnicianModel { FirstName = "Maryam", LastName = "Fareedah"}
             };
 
             List<EmployeeModel> employees = new List<EmployeeModel>();
