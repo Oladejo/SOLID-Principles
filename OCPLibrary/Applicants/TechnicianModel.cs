@@ -4,6 +4,6 @@ namespace OCPLibrary.Applicants
 {
     public class TechnicianModel : BaseModel, IApplicantModel
     {
-        public IAccounts AccountProcessor { get; set; }
+        public IAccounts AccountProcessor { get; set; } = new TechnicalAccounts();
     }
 }
