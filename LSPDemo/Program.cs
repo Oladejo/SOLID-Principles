@@ -9,13 +9,13 @@ namespace LSPDemo
         {
             Console.WriteLine("Hello World!");
 
-            Manager accountingVP = new Manager();
+            IManager accountingVP = new CEO();
 
             accountingVP.FirstName = "Azeez";
             accountingVP.LastName = "Tunde";
             accountingVP.CalculatePerHourRate(4);
 
-            Employee emp = new Employee();
+            IManaged emp = new Manager();
             emp.FirstName = "Maryam";
             emp.LastName = "Azeez";
             emp.AssignManager(accountingVP);
