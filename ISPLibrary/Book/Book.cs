@@ -2,29 +2,30 @@
 
 namespace ISPLibrary
 {
-    public class ReferenceBook : ILibraryItem
+    public class Book : IBorrowableBook
     {
         public string LibraryId { get; set; }
         public string Title { get; set; }
         public string Author { get ; set ; }
         public int Pages { get; set; }
-        public int CheckOutDurationInDays { get; set; } = 0;
+        public int CheckOutDurationInDays { get; set; } = 14;
         public string Borrower { get; set; }
         public DateTime BorrowDate { get ; set ; }
 
         public void CheckOut(string borrower)
         {
-            throw new NotImplementedException();
+            Borrower = borrower;
+            BorrowDate = DateTime.Now;
         }
 
         public void CheckIn()
         {
-            throw new NotImplementedException();
+            Borrower = "";
         }
-
+        
         public DateTime GetDueDate()
         {
-            throw new NotImplementedException();
+            return BorrowDate.AddDays(CheckOutDurationInDays);
         }
     }
 }
