@@ -6,7 +6,7 @@ namespace SRPDemo
     {
         public static void WelcomeMessage()
         {
-            Console.WriteLine("Welcome to my application!");
+            Console.WriteLine("Welcome to Single Responsiblility Principle!");
         }
 
         public static void EndApplication()

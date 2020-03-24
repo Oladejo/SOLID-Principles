@@ -11,6 +11,7 @@ namespace OCPDemo
         static void Main(string[] args)
         {
             //Open and Closed Principle : Closed for modification but open for extension
+            Console.Write("Welcome to Open/Closed Principle");
 
             List<IApplicantModel> applicants = new List<IApplicantModel>
             {
